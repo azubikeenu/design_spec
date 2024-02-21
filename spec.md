@@ -27,7 +27,8 @@ Users are issued keys tied to their live environment, determined by the `GATEWAY
 
 ### sample code 
 
-``async generateKey(type: ApiKeysEnum): Promise<string> {
+```
+async generateKey(type: ApiKeysEnum): Promise<string> {
     let generatedKey = '';
 
     switch (type) {
@@ -48,9 +49,9 @@ Users are issued keys tied to their live environment, determined by the `GATEWAY
   }
 
 // and example of a generated public key  TEST_PUK_0a85ebdc436bf8f0f7c7d81ab16f89f5f301cbc1feeb6070bc
-
+```
 So when a query is made to generate API keys on the test enviroment they are persisted as random strings prefixed with  TEST_PUK`
-``
+
 
 
 #### Authorization Logic
