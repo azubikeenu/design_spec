@@ -74,6 +74,19 @@ Upon successful authorization, the user's payload is stored in the request objec
 
 The current implementation allows integration of the checkout page via plugins, enabling non-authenticated access to the payment gateway.
 
+ The user supplies their public keys via the request headers 
+
+-  The database is queried for the existence of the key on the settings table
+
+-  if a settings object is returned then the associated merchant can be tracked using the user_id 
+
+-  The provider keys are exported as environment variables, test keys are supplied on the staging environment and live keys are supplied on
+   the live environment, this is probably done on the CI/CD pipeline on both environments since variable names remain the same 
+
+-  on completion, the transactions are stored in the web_transactions table and associated with the merchant using the user_id 
+
+
+
 ## Proposed Design
 
 ### Dynamic Key Generation
