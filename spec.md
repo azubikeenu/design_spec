@@ -102,7 +102,7 @@ Users with a `kyc_verified` status can toggle between demo and live environments
 
 ### Persisting Transactions
 
-Separate tables for test transactions and payouts are proposed to mirror the existing live tables. All accounts created in the test environment would be stored in these tables, facilitating lookup operations.
+Separate tables for test transactions ,payouts and wallet are proposed to mirror the existing live tables. All accounts created in the test environment would be stored in these tables, facilitating lookup operations
 
 ### Provider Services and Environment Variables
 
