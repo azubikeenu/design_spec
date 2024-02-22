@@ -132,6 +132,12 @@ Environment variables for provider test keys would be added, with business logic
 
 Custom endpoints (`api/v1/dev/payouts`, `api/v1/dev/transactions`, `api/v1/dev/settings`) would exclusively be available in the demo environment.
 
+
+### Protecting live endpoints from unverified user
+
+A custom guard would be created on the enpoints that checks the `kyc_verified` status of the user and returns an UnAuthorized 
+Exception if they arent verified 
+
 ---
 
 This proposed design aims to enhance flexibility and security while providing a seamless experience for users toggling between live and demo environments.
