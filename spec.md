@@ -70,6 +70,8 @@ Upon successful authorization, the user's payload is stored in the request objec
 - The `getTransactions` endpoint, being a protected route, passes through the AuthGuard for token verification.
 - User ID is extracted using the `@LoggedInUser` decorator and utilized in the service's business logic to query user transactions.
 
+![Get Web Transactions Flow](assets/get_web_transaction_flow.png)
+
 #### PAY_WITH_CARD
 
 The current implementation allows integration of the checkout page via plugins, enabling non-authenticated access to the payment gateway.
@@ -85,7 +87,7 @@ The current implementation allows integration of the checkout page via plugins, 
 
 -  on completion, the transactions are stored in the web_transactions table and associated with the merchant using the user_id 
 
-
+![Pay with Card Flow](assets/pay_with_card_flow.png)
 
 ## Proposed Design
 
@@ -117,9 +119,14 @@ Users with a `kyc_verified` status can toggle between demo and live environments
 
 Separate tables for test transactions ,payouts and wallet are proposed to mirror the existing live tables. All accounts created in the test environment would be stored in these tables, facilitating lookup operations
 
+![Test Tables for Web Transactions and Payout Accounts](./assets/example_schema.png)
+
+
 ### Provider Services and Environment Variables
 
 Environment variables for provider test keys would be added, with business logic in the demo environment utilizing these test keys.
+
+
 
 ### Custom Endpoints
 
